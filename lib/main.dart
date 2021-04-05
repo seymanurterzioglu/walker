@@ -5,7 +5,7 @@ import 'package:walker/Welcome/welcome_screen.dart';
 void main() {
   runApp(MyApp());
 }
-
+//deneme 2 büşra
 class  MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
