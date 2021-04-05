@@ -5,17 +5,17 @@ class  OtherOption extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size=MediaQuery.of(context).size;
+    var width=size.width;
+    var height=size.height;
     return Container(
-      margin: EdgeInsets.symmetric(vertical: size.height * 0.02),
-      width: size.width*0.8,
+      margin: EdgeInsets.symmetric(vertical: height * 0.02),
+      //width: width*0.8,
       child: Column(
         children: <Widget>[
 
           //-----or------
           Row(
             children: <Widget> [
-
-
               buildDivider(),
               Text(
                 "OR",
@@ -29,7 +29,7 @@ class  OtherOption extends StatelessWidget {
             ],
           ),
 
-          SizedBox(height: 15),
+          SizedBox(height: height*0.005),
 
           //facebook-twitter-google
           Row(

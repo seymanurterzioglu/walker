@@ -7,6 +7,7 @@ import 'package:walker/traveler_pic.dart';
 import 'package:walker/main_page.dart';
 import 'package:walker/other_option.dart';
 
+
 //Uygulama ilk ekran
 
 class WelcomeScreen extends StatefulWidget {
@@ -23,6 +24,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
   @override
   Widget build(BuildContext context) {
     Size size=MediaQuery.of(context).size;
+    var width=size.width;
+    var height=size.height;
     return MaterialApp(
   debugShowCheckedModeBanner: false,
       home: Scaffold(
@@ -30,69 +33,73 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
         body:ListView(
           children:<Widget>[
 
-            SizedBox(height:20),
+            SizedBox(height:height*0.015),
 
             //Turist resmi ve hizalandirmasi
+
             TravelerPicture(),
 
-            SizedBox(height: 40),
+            SizedBox(height: height*0.03),
 
             //E-mail TextField
-            Padding(
-              padding: const EdgeInsets.only(left:30, right: 30,),
-              child: TextField(
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(
-                    borderSide: BorderSide(color:Colors.black,width: 1),
-                    borderRadius: BorderRadius.all(Radius.circular(15)),
-                  ),
-                  hintText: "Email",
-                  filled: true,
-                  fillColor: Colors.white,
-                ),
-                keyboardType: TextInputType.emailAddress,
 
+            Padding(
+              padding: const EdgeInsets.only(left:30, right: 30),
+              child: Container(
+                height: height*0.09,
+                child: TextField(
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                      borderSide: BorderSide(color:Colors.black),
+                      borderRadius: BorderRadius.all(Radius.circular(15)),
+                    ),
+                    hintText: "Email",
+                    filled: true,
+                    fillColor: Colors.white,
+                  ),
+                  keyboardType: TextInputType.emailAddress,
+
+                ),
               ),
             ),
 
-            SizedBox(height: 20),
-
+            SizedBox(height: height*0.01),
 
             //Password TextField
+
             Padding(
-              padding: const EdgeInsets.only(left:30, right: 30,),
-              child: TextFormField(
-
-
-                decoration:InputDecoration(
-                  border: OutlineInputBorder(
-                    borderSide: BorderSide(color:Colors.black,width: 1),
-                    borderRadius: BorderRadius.all(Radius.circular(15)),
+              padding: const EdgeInsets.only(left:30, right: 30),
+              child: Container(
+                height: height*0.09,
+                child: TextFormField(
+                  decoration:InputDecoration(
+                    border: OutlineInputBorder(
+                      borderSide: BorderSide(color:Colors.black),
+                      borderRadius: BorderRadius.all(Radius.circular(15)),
+                    ),
+                    hintText: 'Password',
+                    //errorText: 'Password is wrong',
+                    suffixIcon: IconButton(
+                      icon: isPasswordVisible
+                          ? Icon(Icons.visibility_off)
+                          : Icon(Icons.visibility),
+                      onPressed: () =>
+                          setState(() => isPasswordVisible =! isPasswordVisible),
+                    ),
+                    filled: true,
+                    fillColor: Colors.white,
                   ),
-                  hintText: 'Password',
-                  //errorText: 'Password is wrong',
-                  suffixIcon: IconButton(
-                    icon: isPasswordVisible
-                        ? Icon(Icons.visibility_off)
-                        : Icon(Icons.visibility),
-                    onPressed: () =>
-                        setState(() => isPasswordVisible =! isPasswordVisible),
-                  ),
-                  filled: true,
-                  fillColor: Colors.white,
+                  obscureText: isPasswordVisible,
+                  obscuringCharacter: '*',
                 ),
-                obscureText: isPasswordVisible,
-                obscuringCharacter: '*',
               ),
             ),
-
-            SizedBox(height:10),
 
             //Forgot Password
 
             Container(
-              alignment: Alignment(0.75,0.1),
-              padding: EdgeInsets.only(top:15,left:20),
+              alignment: Alignment(0.70,0.1),
+              padding: EdgeInsets.only(top:3,left:20),
               child: InkWell(
                 onTap: (){} ,
                 child: Text(
@@ -101,21 +108,20 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                      color: white,
                      fontWeight: FontWeight.bold,
                      fontFamily: 'Montserrat',
-                     fontSize: 17,
+                     fontSize: width*0.04,
                      decoration: TextDecoration.underline,
                    ),
                 ),
               ),
             ),
 
-            SizedBox(height:20),
-
+            SizedBox(height:height*0.015),
 
             //Login butonu
+
             RoundedButton(
               text:"LOGIN",
               press: (){
-                //e-mail sifre kontrol edilip buradan anasayfaya giriş yapılacak
 
                   Navigator.push(
                       context,
@@ -131,6 +137,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               textColor: kPrimaryColor,
             ),
 
+            SizedBox(height:height*0.009),
 
             //You don't have an account?Sign up
             Row(
@@ -138,13 +145,11 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               children: <Widget> [
                 Text(
                   "You don't have an account?",
-                  style: TextStyle(color:white),
+                  style: TextStyle(color:white,fontSize: height*0.02),
                 ),
                 GestureDetector(
                   onTap: () {
-
-                    // buradan Sign up sayfasına gidilecek
-
+                    // go to sign up page
                     Navigator.push(
                       context,
                       MaterialPageRoute(
@@ -160,11 +165,14 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                     style: TextStyle(
                       color: white,
                       fontWeight: FontWeight.bold,
+                      fontSize: height*0.02,
                     ),
                   ),
                 ),
               ],
             ),
+
+            SizedBox(height:height*0.009),
 
             //or -google-twitter-facebook
 
