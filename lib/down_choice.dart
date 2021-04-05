@@ -25,26 +25,27 @@ class _DownChoiceState extends State<DownChoice> {
         },
         items: [
           BottomNavigationBarItem(
-            title: Text('Home'),
+            label: 'Home',
             icon: Icon(Icons.home),
           ),
           BottomNavigationBarItem(
-            title: Text('Calendar'),
+            label: 'Home',
             icon: Icon(Icons.calendar_today),
           ),
           BottomNavigationBarItem(
-            title: Text('Add'),
+            label: 'Home',
             icon: Icon(Icons.add),
           ),
           BottomNavigationBarItem(
-            title: Text('Alarm'),
+            label: 'Home',
             icon: Icon(Icons.location_on),
           ),
           BottomNavigationBarItem(
-            title: Text('Guide'),
+            label: 'Home',
             icon: Icon(Icons.person),
           ),
         ],
+
       ),
 
     );

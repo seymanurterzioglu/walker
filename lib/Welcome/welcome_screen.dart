@@ -24,7 +24,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
   Widget build(BuildContext context) {
     Size size=MediaQuery.of(context).size;
     return MaterialApp(
-
+  debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: kPrimaryColor,
         body:ListView(
