@@ -1,65 +1,110 @@
 import 'package:flutter/material.dart';
+import 'package:walker/AddPage.dart';
+import 'package:walker/AlarmPage.dart';
+import 'package:walker/CalendarPage.dart';
+import 'package:walker/GuidePage.dart';
+import 'package:walker/HomePage.dart';
 import 'package:walker/constants.dart';
-//import 'package:flutter/src/material/bottom_navigation_bar.dart';
-import 'package:convex_bottom_bar/convex_bottom_bar.dart';
+
 class DownChoice extends StatefulWidget {
   @override
   _DownChoiceState createState() => _DownChoiceState();
 }
 
 class _DownChoiceState extends State<DownChoice> {
-  int _currentIndex = 0;
+  int index=0;
   @override
   Widget build(BuildContext context) {
-    Size size=MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: kPrimaryColor,
-      bottomNavigationBar: ConvexAppBar(
-          backgroundColor: Colors.brown,
-          color: Colors.black,
-          items:[
-            TabItem(icon: Icons.home,title:'Home'),
-            TabItem(icon: Icons.date_range,title:'Calendar'),
-            TabItem(icon: Icons.add_circle),
-            TabItem(icon: Icons.notifications_none,title:'Notification'),
-            TabItem(icon: Icons.account_circle,title:'Profile'),
-          ]
-      ),
-        /* bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        currentIndex: _currentIndex,
-        backgroundColor: Colors.brown,
-        selectedItemColor: Colors.white,
-        onTap: (value) {
-          // Respond to item press.
-          setState(() => _currentIndex = value);
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: index,
+        onTap:(int newIndex) {
+          setState(() {
+            index=newIndex;
+
+          });
         },
-        items: [
-          BottomNavigationBarItem(
-            label: 'Home',
-            icon: Icon(Icons.home),
-          ),
-          BottomNavigationBarItem(
-            label: 'Home',
-            icon: Icon(Icons.calendar_today),
-          ),
-          BottomNavigationBarItem(
-            label: 'Home',
-            icon: Icon(Icons.add),
-          ),
-          BottomNavigationBarItem(
-            label: 'Home',
-            icon: Icon(Icons.location_on),
-          ),
-          BottomNavigationBarItem(
-            label: 'Home',
-            icon: Icon(Icons.person),
-          ),
+        backgroundColor: kPrimaryColor,
+        type:BottomNavigationBarType.fixed,
+        showSelectedLabels: false,
+        showUnselectedLabels: false,
+            items: [
+              BottomNavigationBarItem(
+             icon: new Icon(Icons.home,color:white,size: 18,),
+            title: Text('Home',
+            style: TextStyle(
+              color: white,
+            ),
+            ),
+            activeIcon: Icon(Icons.home,
+            color:white,
+            size: 30,
+            ),
+             ),
+
+               BottomNavigationBarItem(
+             icon: new Icon(Icons.add,color:white,size: 18,),
+            title: Text('Add',
+            style: TextStyle(
+              color: white,
+            ),
+            ),
+            activeIcon: Icon(Icons.add,
+            color:white,
+            size: 30,
+            ),
+             ),
+
+               BottomNavigationBarItem(
+             icon: new Icon(Icons.calendar_today,color:white,size: 18,),
+            title: Text('Calendar',
+            style: TextStyle(
+              color: white,
+            ),
+            ),
+            activeIcon: Icon(Icons.calendar_today,
+            color:white,
+            size: 30,
+            ),
+             ),
+
+               BottomNavigationBarItem(
+             icon: new Icon(Icons.alarm,color:white,size: 18,),
+            title: Text('Alarm',
+            style: TextStyle(
+              color: white,
+            ),
+            ),
+            activeIcon: Icon(Icons.alarm,
+            color:white,
+            size: 30,
+            ),
+             ),
+               BottomNavigationBarItem(
+             icon: new Icon(Icons.assessment, color:white,size: 18,),
+            title: Text('Guide',
+            style: TextStyle(
+              color: white,
+            ),
+            ),
+            activeIcon: Icon(Icons.assessment,
+            color:white,
+            size: 30,
+            ),
+             ),
+            ], 
+            
+      ),
+      body: IndexedStack(
+       index: index,
+        children: [
+          HomePage(),
+          AddPage(),
+          CalendarPage(),
+          AlarmPage(),
+          GuidePage(),
         ],
-
-      ),*/
-
+      ),
     );
   }
 }
-
