@@ -6,6 +6,8 @@ void main() {
   runApp(MyApp());
 }
 //deneme 2 büşra
+
+//deneme 3 seyma
 class  MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
