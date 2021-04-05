@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:walker/constants.dart';
 //import 'package:flutter/src/material/bottom_navigation_bar.dart';
-
+import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 class DownChoice extends StatefulWidget {
   @override
   _DownChoiceState createState() => _DownChoiceState();
@@ -14,7 +14,18 @@ class _DownChoiceState extends State<DownChoice> {
     Size size=MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: kPrimaryColor,
-      bottomNavigationBar: BottomNavigationBar(
+      bottomNavigationBar: ConvexAppBar(
+          backgroundColor: Colors.brown,
+          color: Colors.black,
+          items:[
+            TabItem(icon: Icons.home,title:'Home'),
+            TabItem(icon: Icons.date_range,title:'Calendar'),
+            TabItem(icon: Icons.add_circle),
+            TabItem(icon: Icons.notifications_none,title:'Notification'),
+            TabItem(icon: Icons.account_circle,title:'Profile'),
+          ]
+      ),
+        /* bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         currentIndex: _currentIndex,
         backgroundColor: Colors.brown,
@@ -46,7 +57,7 @@ class _DownChoiceState extends State<DownChoice> {
           ),
         ],
 
-      ),
+      ),*/
 
     );
   }
