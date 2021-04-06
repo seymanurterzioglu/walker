@@ -12,14 +12,7 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) {
     Size size=MediaQuery.of(context).size;
     return MaterialApp(
-    home: Scaffold(
-      appBar: AppBar(
-        title: Text("WALKER"),
-        backgroundColor: kPrimaryColor,
-      ),
-      backgroundColor: kPrimaryColor,
-      body: DownChoice(),
-    ),
+    home:DownChoice(),
     );
   }
 }
