@@ -10,9 +10,9 @@ class MainPage extends StatefulWidget {
 class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
-    Size size=MediaQuery.of(context).size;
+    Size size = MediaQuery.of(context).size;
     return MaterialApp(
-    home:DownChoice(),
+      home: DownChoice(),
     );
   }
 }

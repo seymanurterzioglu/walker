@@ -10,9 +10,9 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    Size size=MediaQuery.of(context).size;
-    var width=size.width;
-    var height=size.height;
+    Size size = MediaQuery.of(context).size;
+    var width = size.width;
+    var height = size.height;
     return Scaffold(
       backgroundColor: kPrimaryColor,
       appBar: AppBar(
@@ -21,12 +21,12 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: kPrimaryColor,
         leading: Icon(
           Icons.menu,
-          size: width*0.08,
+          size: width * 0.08,
         ),
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 15),
-            child: Icon(Icons.subdirectory_arrow_left, size: width*0.08),
+            child: Icon(Icons.subdirectory_arrow_left, size: width * 0.08),
           ),
         ], //buton koymaya yarar.
       ),
@@ -42,8 +42,8 @@ class _HomePageState extends State<HomePage> {
                   Padding(
                     padding: const EdgeInsets.only(top: 10),
                     child: Container(
-                      height:height*0.4,
-                      width: width*0.9,
+                      height: height * 0.4,
+                      width: width * 0.9,
                       decoration: BoxDecoration(
                         color: Colors.red,
                         borderRadius: BorderRadius.circular(20),
@@ -58,13 +58,15 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ],
               ),
-              SizedBox(height: height*0.04),
+              SizedBox(height: height * 0.04),
               Padding(
-                padding: const EdgeInsets.only(left:0,right:150),
+                padding: const EdgeInsets.only(left: 0, right: 150),
                 child: Text(
                   yerlerListesi[index].baslik,
                   style: TextStyle(
-                      color: white, fontWeight: FontWeight.bold, fontSize: height*0.04),
+                      color: white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: height * 0.04),
                 ),
               ),
               Padding(
@@ -72,49 +74,49 @@ class _HomePageState extends State<HomePage> {
                     const EdgeInsets.symmetric(horizontal: 26, vertical: 2),
                 child: Text(
                   yerlerListesi[index].aciklama,
-                  style: TextStyle(color: white, fontSize: height*0.025),
+                  style: TextStyle(color: white, fontSize: height * 0.025),
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(left:0,right: 210),
+                padding: const EdgeInsets.only(left: 0, right: 210),
                 child: Text(
                   "8m ago",
                   style: TextStyle(
                       color: white,
                       fontWeight: FontWeight.normal,
-                      fontSize: height*0.026),
+                      fontSize: height * 0.026),
                 ),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Container(
-                    height: height*0.05,
-                    width: width*0.04,
+                    height: height * 0.05,
+                    width: width * 0.04,
                     decoration: BoxDecoration(
                       color: Colors.yellow,
                       shape: BoxShape.circle,
                     ),
                   ),
-                  SizedBox(width: width*0.025),
+                  SizedBox(width: width * 0.025),
                   Container(
-                    height: height*0.05,
-                    width: width*0.04,
+                    height: height * 0.05,
+                    width: width * 0.04,
                     decoration: BoxDecoration(
                       color: white,
                       shape: BoxShape.circle,
                     ),
                   ),
-                  SizedBox(width: width*0.025),
+                  SizedBox(width: width * 0.025),
                   Container(
-                    height: height*0.05,
-                    width: width*0.04,
+                    height: height * 0.05,
+                    width: width * 0.04,
                     decoration: BoxDecoration(
                       color: white,
                       shape: BoxShape.circle,
                     ),
                   ),
-                  SizedBox(width: width*0.07),
+                  SizedBox(width: width * 0.07),
                 ],
               ),
             ],

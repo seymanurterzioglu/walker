@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:walker/Welcome/welcome_screen.dart';
 
 // deneme
-void main(
-) {
+void main() {
   runApp(MyApp());
 }
 //deneme 2 büşra
@@ -13,17 +12,16 @@ void main(
 //deneme 4
 //degisiklik
 
-class  MyApp extends StatelessWidget {
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title:'Sign in',
-      theme:ThemeData(
-
+      title: 'Sign in',
+      theme: ThemeData(
         scaffoldBackgroundColor: Colors.white,
       ),
-      home:WelcomeScreen(),
+      home: WelcomeScreen(),
     );
   }
 }

@@ -4,6 +4,4 @@ class Yerler {
   final String resim;
 
   Yerler({this.baslik, this.aciklama, this.resim});
-  
-
 }

@@ -11,48 +11,47 @@ class SignUpScreen extends StatefulWidget {
 }
 
 class _SignUpScreenState extends State<SignUpScreen> {
-  String password='';
+  String password = '';
 
-  bool isPasswordVisible=true;
+  bool isPasswordVisible = true;
 
-  bool checkBoxValue=false;
+  bool checkBoxValue = false;
+
   @override
   Widget build(BuildContext context) {
-    Size size=MediaQuery.of(context).size;
-    var width=size.width;
-    var height=size.height;
+    Size size = MediaQuery.of(context).size;
+    var width = size.width;
+    var height = size.height;
     return MaterialApp(
-      home:Scaffold(
+      home: Scaffold(
         backgroundColor: kPrimaryColor,
-        body:ListView(
-          children: <Widget> [
-
-            SizedBox(height:height*0.003),
+        body: ListView(
+          children: <Widget>[
+            SizedBox(height: height * 0.003),
 
             //Turist resmi ve hizalandırması
 
             TravelerPicture(),
 
-            SizedBox(height: height*0.02),
+            SizedBox(height: height * 0.02),
 
             //Name
 
             Padding(
-              padding: const EdgeInsets.only(left:30, right: 30, bottom: 10),
+              padding: const EdgeInsets.only(left: 30, right: 30, bottom: 10),
               child: Container(
-                height: height*0.09,
+                height: height * 0.09,
                 child: TextField(
                   decoration: InputDecoration(
                     border: OutlineInputBorder(
-                      borderSide: BorderSide(color:Colors.black,width:width*0.01),
+                      borderSide:
+                          BorderSide(color: Colors.black, width: width * 0.01),
                       borderRadius: BorderRadius.all(Radius.circular(15)),
                     ),
                     hintText: "Name",
                     filled: true,
                     fillColor: Colors.white,
                   ),
-
-
                 ),
               ),
             ),
@@ -60,13 +59,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
             //Email
 
             Padding(
-              padding: const EdgeInsets.only(left:30, right: 30,bottom: 10),
+              padding: const EdgeInsets.only(left: 30, right: 30, bottom: 10),
               child: Container(
-                height: height*0.09,
+                height: height * 0.09,
                 child: TextField(
                   decoration: InputDecoration(
                     border: OutlineInputBorder(
-                      borderSide: BorderSide(color:Colors.black,width: 1),
+                      borderSide: BorderSide(color: Colors.black, width: 1),
                       borderRadius: BorderRadius.all(Radius.circular(15)),
                     ),
                     hintText: "Email",
@@ -74,7 +73,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     fillColor: Colors.white,
                   ),
                   keyboardType: TextInputType.emailAddress,
-
                 ),
               ),
             ),
@@ -82,13 +80,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
             //Password
 
             Padding(
-              padding: const EdgeInsets.only(left:30, right: 30,bottom:3),
+              padding: const EdgeInsets.only(left: 30, right: 30, bottom: 3),
               child: Container(
-                height: height*0.09,
+                height: height * 0.09,
                 child: TextFormField(
-                  decoration:InputDecoration(
+                  decoration: InputDecoration(
                     border: OutlineInputBorder(
-                      borderSide: BorderSide(color:Colors.black,width: 1),
+                      borderSide: BorderSide(color: Colors.black, width: 1),
                       borderRadius: BorderRadius.all(Radius.circular(15)),
                     ),
                     hintText: 'Password',
@@ -97,8 +95,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       icon: isPasswordVisible
                           ? Icon(Icons.visibility_off)
                           : Icon(Icons.visibility),
-                      onPressed: () =>
-                          setState(() => isPasswordVisible =! isPasswordVisible),
+                      onPressed: () => setState(
+                          () => isPasswordVisible = !isPasswordVisible),
                     ),
                     filled: true,
                     fillColor: Colors.white,
@@ -112,52 +110,63 @@ class _SignUpScreenState extends State<SignUpScreen> {
             //I accept all promotional information
 
             Padding(
-              padding: const EdgeInsets.only(left:25),
+              padding: const EdgeInsets.only(left: 25),
               child: Row(
-                children:<Widget> [
+                children: <Widget>[
                   Checkbox(
                     value: checkBoxValue,
-                    onChanged: (bool value)
-                    {
+                    onChanged: (bool value) {
                       print(value);
                       setState(() {
-                        checkBoxValue=value;
+                        checkBoxValue = value;
                       });
                     },
                   ),
-
                   Text(
-                      "I accept all promotional information.",
-                    style: TextStyle(fontSize: height*0.023),
+                    "I accept all promotional information.",
+                    style: TextStyle(fontSize: height * 0.023),
                   ),
                 ],
-
               ),
             ),
 
-            SizedBox(height:height*0.02),
+            SizedBox(height: height * 0.02),
 
             //Next Button
 
             RoundedButton(
-              text:"Next",
-              press: (){
+              text: "Next",
+              press: () {
                 //Tourist-Guide sliding page
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder:(context) {
-                            return TravelerSign();
-                          },
-                      ),
-                    ); //Navigator.push
-
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return TravelerSign();
+                    },
+                  ),
+                ); //Navigator.push
               },
-              color:white,
+              color: white,
               textColor: kPrimaryColor,
+            ),
+            GestureDetector(
+              onTap: () {
+                // go to sign up page
+                Navigator.pop(context);//Navigator.push
+              },
+              child: Text(
+                "Sign Up!",
+                style: TextStyle(
+                  color: white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: height * 0.02,
+                ),
+              ),
             ),
           ],
         ),
-      ),);
+      ),
+    );
   }
 }

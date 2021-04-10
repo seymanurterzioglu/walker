@@ -2,71 +2,63 @@ import 'package:flutter/material.dart';
 import 'package:walker/constants.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
 
-class  OtherOption extends StatelessWidget {
+class OtherOption extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    Size size=MediaQuery.of(context).size;
-    var width=size.width;
-    var height=size.height;
+    Size size = MediaQuery.of(context).size;
+    var width = size.width;
+    var height = size.height;
     return Container(
       margin: EdgeInsets.symmetric(vertical: height * 0.02),
       //width: width*0.8,
       child: Column(
         children: <Widget>[
-
           //-----or------
           Row(
-            children: <Widget> [
+            children: <Widget>[
               buildDivider(),
               Text(
                 "OR",
                 style: TextStyle(
-                  color:white,
+                  color: white,
                   fontWeight: FontWeight.bold,
                 ),
               ),
               buildDivider(),
-
             ],
           ),
 
-          SizedBox(height: height*0.005),
+          SizedBox(height: height * 0.005),
 
           //facebook-twitter-google
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget> [
-
+            children: <Widget>[
               // TODO: flutter_signin_button: ^2.0.0  eklendi
               SignInButton(
                 Buttons.Google,
                 // Google mini modu desteklemiyor
                 onPressed: () {},
               ),
-              SizedBox(width: width*0.010),
+              SizedBox(width: width * 0.010),
               SignInButton(
                 Buttons.Facebook,
                 mini: true,
                 onPressed: () {},
               ),
-              SizedBox(width: width*0.010),
+              SizedBox(width: width * 0.010),
               SignInButton(
                 Buttons.Twitter,
                 mini: true,
                 onPressed: () {},
               ),
-
-
-
             ],
           ),
-
-
         ],
       ),
-
     );
   }
+
   //   ---------------  method
 
   Expanded buildDivider() {
@@ -79,7 +71,7 @@ class  OtherOption extends StatelessWidget {
       ),
     );
   }
-}  //Other Option class finish
+} //Other Option class finish
 
 /*
 class  SocialIcon extends StatelessWidget {

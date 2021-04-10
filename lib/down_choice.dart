@@ -12,91 +12,117 @@ class DownChoice extends StatefulWidget {
 }
 
 class _DownChoiceState extends State<DownChoice> {
-  int index=0;
+  int index = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: index,
-        onTap:(int newIndex) {
+        onTap: (int newIndex) {
           setState(() {
-            index=newIndex;
-
+            index = newIndex;
           });
         },
         backgroundColor: kPrimaryColor,
-        type:BottomNavigationBarType.fixed,
+        type: BottomNavigationBarType.fixed,
         showSelectedLabels: false,
         showUnselectedLabels: false,
-            items: [
-              BottomNavigationBarItem(
-             icon: new Icon(Icons.home,color:white,size: 18,),
-            title: Text('Home',
-            style: TextStyle(
+        items: [
+          BottomNavigationBarItem(
+            icon: new Icon(
+              Icons.home,
               color: white,
+              size: 18,
             ),
+            title: Text(
+              'Home',
+              style: TextStyle(
+                color: white,
+              ),
             ),
-            activeIcon: Icon(Icons.home,
-            color:white,
-            size: 30,
-            ),
-             ),
-
-               BottomNavigationBarItem(
-             icon: new Icon(Icons.add,color:white,size: 18,),
-            title: Text('Add',
-            style: TextStyle(
+            activeIcon: Icon(
+              Icons.home,
               color: white,
+              size: 30,
             ),
-            ),
-            activeIcon: Icon(Icons.add,
-            color:white,
-            size: 30,
-            ),
-             ),
-
-               BottomNavigationBarItem(
-             icon: new Icon(Icons.calendar_today,color:white,size: 18,),
-            title: Text('Calendar',
-            style: TextStyle(
+          ),
+          BottomNavigationBarItem(
+            icon: new Icon(
+              Icons.add,
               color: white,
+              size: 18,
             ),
+            title: Text(
+              'Add',
+              style: TextStyle(
+                color: white,
+              ),
             ),
-            activeIcon: Icon(Icons.calendar_today,
-            color:white,
-            size: 30,
-            ),
-             ),
-
-               BottomNavigationBarItem(
-             icon: new Icon(Icons.alarm,color:white,size: 18,),
-            title: Text('Alarm',
-            style: TextStyle(
+            activeIcon: Icon(
+              Icons.add,
               color: white,
+              size: 30,
             ),
-            ),
-            activeIcon: Icon(Icons.alarm,
-            color:white,
-            size: 30,
-            ),
-             ),
-               BottomNavigationBarItem(
-             icon: new Icon(Icons.assessment, color:white,size: 18,),
-            title: Text('Guide',
-            style: TextStyle(
+          ),
+          BottomNavigationBarItem(
+            icon: new Icon(
+              Icons.calendar_today,
               color: white,
+              size: 18,
             ),
+            title: Text(
+              'Calendar',
+              style: TextStyle(
+                color: white,
+              ),
             ),
-            activeIcon: Icon(Icons.assessment,
-            color:white,
-            size: 30,
+            activeIcon: Icon(
+              Icons.calendar_today,
+              color: white,
+              size: 30,
             ),
-             ),
-            ], 
-            
+          ),
+          BottomNavigationBarItem(
+            icon: new Icon(
+              Icons.alarm,
+              color: white,
+              size: 18,
+            ),
+            title: Text(
+              'Alarm',
+              style: TextStyle(
+                color: white,
+              ),
+            ),
+            activeIcon: Icon(
+              Icons.alarm,
+              color: white,
+              size: 30,
+            ),
+          ),
+          BottomNavigationBarItem(
+            icon: new Icon(
+              Icons.assessment,
+              color: white,
+              size: 18,
+            ),
+            title: Text(
+              'Guide',
+              style: TextStyle(
+                color: white,
+              ),
+            ),
+            activeIcon: Icon(
+              Icons.assessment,
+              color: white,
+              size: 30,
+            ),
+          ),
+        ],
       ),
       body: IndexedStack(
-       index: index,
+        index: index,
         children: [
           HomePage(),
           AddPage(),
