@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:walker/constants.dart';
 import 'package:walker/yerler.dart';
+import 'package:walker/navigation_drawer.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -10,116 +11,123 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    Size size=MediaQuery.of(context).size;
-    var width=size.width;
-    var height=size.height;
+    Size size = MediaQuery.of(context).size;
+    var width = size.width;
+    var height = size.height;
     return Scaffold(
       backgroundColor: kPrimaryColor,
+      drawer: NavBar(),
       appBar: AppBar(
         title: Text("Home Page"),
-        centerTitle: true,
         backgroundColor: kPrimaryColor,
+        centerTitle: true,
+
+/*
         leading: Icon(
           Icons.menu,
-          size: width*0.08,
+          size: width * 0.08,
         ),
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 15),
-            child: Icon(Icons.subdirectory_arrow_left, size: width*0.08),
+            child: Icon(Icons.subdirectory_arrow_left, size: width * 0.08),
           ),
-        ], //buton koymaya yarar.
+        ], *///buton koymaya yarar.
       ),
-      body: ListView.builder(
-        scrollDirection: Axis.vertical,
-        itemCount: 3,
-        itemBuilder: (_, index) {
-          return Column(
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(top: 10),
-                    child: Container(
-                      height:height*0.4,
-                      width: width*0.9,
-                      decoration: BoxDecoration(
-                        color: Colors.red,
-                        borderRadius: BorderRadius.circular(20),
-                        image: DecorationImage(
-                          fit: BoxFit.fill,
-                          image: AssetImage(
-                            yerlerListesi[index].resim,
+      body: Center(
+        child: ListView.builder(
+          scrollDirection: Axis.vertical,
+          itemCount: 3,
+          itemBuilder: (_, index) {
+            return Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(top: 10),
+                      child: Container(
+                        height: height * 0.4,
+                        width: width * 0.9,
+                        decoration: BoxDecoration(
+                          color: Colors.red,
+                          borderRadius: BorderRadius.circular(20),
+                          image: DecorationImage(
+                            fit: BoxFit.fill,
+                            image: AssetImage(
+                              yerlerListesi[index].resim,
+                            ),
                           ),
                         ),
                       ),
                     ),
-                  ),
-                ],
-              ),
-              SizedBox(height: height*0.04),
-              Padding(
-                padding: const EdgeInsets.only(left:0,right:150),
-                child: Text(
-                  yerlerListesi[index].baslik,
-                  style: TextStyle(
-                      color: white, fontWeight: FontWeight.bold, fontSize: height*0.04),
+                  ],
                 ),
-              ),
-              Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 26, vertical: 2),
-                child: Text(
-                  yerlerListesi[index].aciklama,
-                  style: TextStyle(color: white, fontSize: height*0.025),
+                SizedBox(height: height * 0.04),
+                Padding(
+                  padding: const EdgeInsets.only(left: 0, right: 150),
+                  child: Text(
+                    yerlerListesi[index].baslik,
+                    style: TextStyle(
+                        color: white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: height * 0.04),
+                  ),
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left:0,right: 210),
-                child: Text(
-                  "8m ago",
-                  style: TextStyle(
-                      color: white,
-                      fontWeight: FontWeight.normal,
-                      fontSize: height*0.026),
+                Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 26, vertical: 2),
+                  child: Text(
+                    yerlerListesi[index].aciklama,
+                    style: TextStyle(color: white, fontSize: height * 0.025),
+                  ),
                 ),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Container(
-                    height: height*0.05,
-                    width: width*0.04,
-                    decoration: BoxDecoration(
-                      color: Colors.yellow,
-                      shape: BoxShape.circle,
-                    ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 0, right: 210),
+                  child: Text(
+                    "8m ago",
+                    style: TextStyle(
+                        color: white,
+                        fontWeight: FontWeight.normal,
+                        fontSize: height * 0.026),
                   ),
-                  SizedBox(width: width*0.025),
-                  Container(
-                    height: height*0.05,
-                    width: width*0.04,
-                    decoration: BoxDecoration(
-                      color: white,
-                      shape: BoxShape.circle,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Container(
+                      height: height * 0.05,
+                      width: width * 0.04,
+                      decoration: BoxDecoration(
+                        color: Colors.yellow,
+                        shape: BoxShape.circle,
+                      ),
                     ),
-                  ),
-                  SizedBox(width: width*0.025),
-                  Container(
-                    height: height*0.05,
-                    width: width*0.04,
-                    decoration: BoxDecoration(
-                      color: white,
-                      shape: BoxShape.circle,
+                    SizedBox(width: width * 0.025),
+                    Container(
+                      height: height * 0.05,
+                      width: width * 0.04,
+                      decoration: BoxDecoration(
+                        color: white,
+                        shape: BoxShape.circle,
+                      ),
                     ),
-                  ),
-                  SizedBox(width: width*0.07),
-                ],
-              ),
-            ],
-          );
-        },
+                    SizedBox(width: width * 0.025),
+                    Container(
+                      height: height * 0.05,
+                      width: width * 0.04,
+                      decoration: BoxDecoration(
+                        color: white,
+                        shape: BoxShape.circle,
+                      ),
+                    ),
+                    SizedBox(width: width * 0.07),
+                  ],
+                ),
+              ],
+            );
+          },
+        ),
       ),
     );
   }

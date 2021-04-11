@@ -26,6 +26,7 @@ class _DownChoiceState extends State<DownChoice> {
         },
         backgroundColor: kPrimaryColor,
         type:BottomNavigationBarType.fixed,
+
         showSelectedLabels: false,
         showUnselectedLabels: false,
             items: [
