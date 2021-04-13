@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:walker/constants.dart';
+//import 'package:walker/Widgets/constants.dart';
 
 class GuidePage extends StatefulWidget {
   @override

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:walker/constants.dart';
-import 'package:walker/traveler_pic.dart';
+import 'package:walker/Widgets/constants.dart';
+import 'package:walker/Widgets/traveler_pic.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:walker/Welcome/rounded_button.dart';
-import 'package:walker/main_page.dart';
+import 'package:walker/Pages//main_page.dart';
 
 class TravelerSign extends StatefulWidget {
   @override
@@ -15,7 +15,6 @@ class _TravelerSignState extends State<TravelerSign> {
   @override
   Widget build(BuildContext context) {
     Size size=MediaQuery.of(context).size;
-    var width=size.width;
     var height=size.height;
     return CupertinoApp(
       home: CupertinoPageScaffold(

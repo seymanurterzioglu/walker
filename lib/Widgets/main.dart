@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:walker/Welcome/welcome_screen.dart';
-import 'package:walker/navigation_drawer.dart';
+//import 'package:walker/Widgets/navigation_drawer.dart';
 
 void main(
 ) {
@@ -14,7 +14,6 @@ class  MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title:'Sign in',
       theme:ThemeData(
-
         scaffoldBackgroundColor: Colors.white,
       ),
       home:WelcomeScreen(),

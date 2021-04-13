@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:walker/constants.dart';
-import 'package:walker/yerler.dart';
-import 'package:walker/navigation_drawer.dart';
+import 'package:walker/Widgets/constants.dart';
+import 'package:walker/Widgets/yerler.dart';
+import 'package:walker/Widgets/navigation_drawer.dart';
 
 class HomePage extends StatefulWidget {
   @override

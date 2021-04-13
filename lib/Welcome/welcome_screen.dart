@@ -1,12 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:walker/constants.dart';
+import 'package:walker/Widgets/constants.dart';
 import 'package:walker/Welcome/rounded_button.dart';
 import 'package:walker/Welcome/signup_screen.dart';
-import 'package:walker/traveler_pic.dart';
-import 'package:walker/main_page.dart';
-import 'package:walker/other_option.dart';
-
+import 'package:walker/Widgets/traveler_pic.dart';
+import 'package:walker/Pages//main_page.dart';
+import 'package:walker/Welcome//other_option.dart';
 
 //Uygulama ilk ekran
 
@@ -16,41 +15,37 @@ class WelcomeScreen extends StatefulWidget {
 }
 
 class _WelcomeScreenState extends State<WelcomeScreen> {
-  String password='';
+  String password = '';
 
-  bool isPasswordVisible=true;
-
+  bool isPasswordVisible = true;
 
   @override
   Widget build(BuildContext context) {
-    Size size=MediaQuery.of(context).size;
-    var width=size.width;
-    var height=size.height;
-    return MaterialApp(
-  debugShowCheckedModeBanner: false,
-      home: Scaffold(
+    Size size = MediaQuery.of(context).size;
+    var width = size.width;
+    var height = size.height;
+    return Scaffold(
         backgroundColor: kPrimaryColor,
-        body:ListView(
-          children:<Widget>[
-
-            SizedBox(height:height*0.015),
+        body: ListView(
+          children: <Widget>[
+            SizedBox(height: height * 0.015),
 
             //Turist resmi ve hizalandirmasi
 
             TravelerPicture(),
 
-            SizedBox(height: height*0.03),
+            SizedBox(height: height * 0.03),
 
             //E-mail TextField
 
             Padding(
-              padding: const EdgeInsets.only(left:30, right: 30),
+              padding: const EdgeInsets.only(left: 30, right: 30),
               child: Container(
-                height: height*0.09,
+                height: height * 0.09,
                 child: TextField(
                   decoration: InputDecoration(
                     border: OutlineInputBorder(
-                      borderSide: BorderSide(color:Colors.black),
+                      borderSide: BorderSide(color: Colors.black),
                       borderRadius: BorderRadius.all(Radius.circular(15)),
                     ),
                     hintText: "Email",
@@ -58,23 +53,22 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                     fillColor: Colors.white,
                   ),
                   keyboardType: TextInputType.emailAddress,
-
                 ),
               ),
             ),
 
-            SizedBox(height: height*0.01),
+            SizedBox(height: height * 0.01),
 
             //Password TextField
 
             Padding(
-              padding: const EdgeInsets.only(left:30, right: 30),
+              padding: const EdgeInsets.only(left: 30, right: 30),
               child: Container(
-                height: height*0.09,
+                height: height * 0.09,
                 child: TextFormField(
-                  decoration:InputDecoration(
+                  decoration: InputDecoration(
                     border: OutlineInputBorder(
-                      borderSide: BorderSide(color:Colors.black),
+                      borderSide: BorderSide(color: Colors.black),
                       borderRadius: BorderRadius.all(Radius.circular(15)),
                     ),
                     hintText: 'Password',
@@ -83,8 +77,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                       icon: isPasswordVisible
                           ? Icon(Icons.visibility_off)
                           : Icon(Icons.visibility),
-                      onPressed: () =>
-                          setState(() => isPasswordVisible =! isPasswordVisible),
+                      onPressed: () => setState(
+                          () => isPasswordVisible = !isPasswordVisible),
                     ),
                     filled: true,
                     fillColor: Colors.white,
@@ -98,54 +92,52 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             //Forgot Password
 
             Container(
-              alignment: Alignment(0.70,0.1),
-              padding: EdgeInsets.only(top:3,left:20),
+              alignment: Alignment(0.70, 0.1),
+              padding: EdgeInsets.only(top: 3, left: 20),
               child: InkWell(
-                onTap: (){} ,
+                onTap: () {},
                 child: Text(
                   'Forgot Password',
-                   style:TextStyle(
-                     color: white,
-                     fontWeight: FontWeight.bold,
-                     fontFamily: 'Montserrat',
-                     fontSize: width*0.04,
-                     decoration: TextDecoration.underline,
-                   ),
+                  style: TextStyle(
+                    color: white,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: 'Montserrat',
+                    fontSize: width * 0.04,
+                    decoration: TextDecoration.underline,
+                  ),
                 ),
               ),
             ),
 
-            SizedBox(height:height*0.015),
+            SizedBox(height: height * 0.015),
 
             //Login butonu
 
             RoundedButton(
-              text:"LOGIN",
-              press: (){
-
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder:(context) {
-                            return MainPage();
-                          },
-                      ),
-                    ); //Navigator.push
-
+              text: "LOGIN",
+              press: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return MainPage();
+                    },
+                  ),
+                ); //Navigator.push
               },
-              color:white,
+              color: white,
               textColor: kPrimaryColor,
             ),
 
-            SizedBox(height:height*0.009),
+            SizedBox(height: height * 0.009),
 
             //You don't have an account?Sign up
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget> [
+              children: <Widget>[
                 Text(
                   "You don't have an account?",
-                  style: TextStyle(color:white,fontSize: height*0.02),
+                  style: TextStyle(color: white, fontSize: height * 0.02),
                 ),
                 GestureDetector(
                   onTap: () {
@@ -153,33 +145,31 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder:(context) {
+                        builder: (context) {
                           return SignUpScreen();
                         },
                       ),
                     ); //Navigator.push
                   },
-
                   child: Text(
                     "Sign Up!",
                     style: TextStyle(
                       color: white,
                       fontWeight: FontWeight.bold,
-                      fontSize: height*0.02,
+                      fontSize: height * 0.02,
                     ),
                   ),
                 ),
               ],
             ),
 
-            SizedBox(height:height*0.009),
+            SizedBox(height: height * 0.009),
 
             //or -google-twitter-facebook
 
             OtherOption(),
-
           ],
         ),
-      ),);
+      );
   }
 }

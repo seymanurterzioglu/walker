@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 //LOGIN , SIGN UP, NEXT button class
 
 class RoundedButton extends StatelessWidget {

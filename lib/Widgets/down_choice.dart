@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:walker/AddPage.dart';
-import 'package:walker/AlarmPage.dart';
-import 'package:walker/CalendarPage.dart';
-import 'package:walker/GuidePage.dart';
-import 'package:walker/HomePage.dart';
-import 'package:walker/constants.dart';
+import 'package:walker/Pages/AddPage.dart';
+import 'package:walker/Pages/AlarmPage.dart';
+import 'package:walker/Pages/CalendarPage.dart';
+import 'package:walker/Pages/GuidePage.dart';
+import 'package:walker/Pages/HomePage.dart';
+import 'package:walker/Widgets/constants.dart';
 
 class DownChoice extends StatefulWidget {
   @override
@@ -29,14 +29,12 @@ class _DownChoiceState extends State<DownChoice> {
 
         showSelectedLabels: false,
         showUnselectedLabels: false,
+        selectedLabelStyle: TextStyle(fontSize: 18),
+        selectedItemColor: Colors.red,
             items: [
               BottomNavigationBarItem(
              icon: new Icon(Icons.home,color:white,size: 18,),
-            title: Text('Home',
-            style: TextStyle(
-              color: white,
-            ),
-            ),
+            label: 'Home',
             activeIcon: Icon(Icons.home,
             color:white,
             size: 30,
@@ -45,11 +43,7 @@ class _DownChoiceState extends State<DownChoice> {
 
                BottomNavigationBarItem(
              icon: new Icon(Icons.add,color:white,size: 18,),
-            title: Text('Add',
-            style: TextStyle(
-              color: white,
-            ),
-            ),
+            label:'Add',
             activeIcon: Icon(Icons.add,
             color:white,
             size: 30,
@@ -58,11 +52,7 @@ class _DownChoiceState extends State<DownChoice> {
 
                BottomNavigationBarItem(
              icon: new Icon(Icons.calendar_today,color:white,size: 18,),
-            title: Text('Calendar',
-            style: TextStyle(
-              color: white,
-            ),
-            ),
+            label:'Calendar',
             activeIcon: Icon(Icons.calendar_today,
             color:white,
             size: 30,
@@ -71,11 +61,7 @@ class _DownChoiceState extends State<DownChoice> {
 
                BottomNavigationBarItem(
              icon: new Icon(Icons.alarm,color:white,size: 18,),
-            title: Text('Alarm',
-            style: TextStyle(
-              color: white,
-            ),
-            ),
+            label:'Alarm',
             activeIcon: Icon(Icons.alarm,
             color:white,
             size: 30,
@@ -83,11 +69,7 @@ class _DownChoiceState extends State<DownChoice> {
              ),
                BottomNavigationBarItem(
              icon: new Icon(Icons.assessment, color:white,size: 18,),
-            title: Text('Guide',
-            style: TextStyle(
-              color: white,
-            ),
-            ),
+            label: 'Guide',
             activeIcon: Icon(Icons.assessment,
             color:white,
             size: 30,
