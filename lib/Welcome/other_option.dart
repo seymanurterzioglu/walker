@@ -41,24 +41,8 @@ class  OtherOption extends StatelessWidget {
               SizedBox(width: width*0.005),
               SignInButton(
                 Buttons.Google,
-                // Google mini modu desteklemiyor
                 onPressed: () {},
               ),
-              SizedBox(width: width*0.007),
-              SignInButton(
-                Buttons.Facebook,
-                mini: true,
-                onPressed: () {},
-              ),
-
-              SignInButton(
-                Buttons.Twitter,
-                mini: true,
-                onPressed: () {},
-              ),
-
-
-
             ],
           ),
 
