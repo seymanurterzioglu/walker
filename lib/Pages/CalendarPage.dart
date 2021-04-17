@@ -23,8 +23,8 @@ class _CalendarPageState extends State<CalendarPage> {
         centerTitle: true,
       ),
      body: TableCalendar(
-       firstDay: DateTime.utc(2010, 10, 16),
-       lastDay: DateTime.utc(2030, 3, 14),
+       firstDay: DateTime(1990)
+       lastDay: DateTime(2050),
        focusedDay: DateTime.now(),
 
        selectedDayPredicate: (day) {
@@ -33,7 +33,7 @@ class _CalendarPageState extends State<CalendarPage> {
        onDaySelected: (selectedDay, focusedDay) {
          setState(() {
            _selectedDay = selectedDay;
-           _focusedDay = focusedDay; // update `_focusedDay` here as well
+           _focusedDay = focusedDay;
          });
        },
        calendarFormat: _calendarFormat,
