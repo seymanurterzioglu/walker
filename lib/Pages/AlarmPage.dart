@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-//import 'package:walker/Widgets/constants.dart';
+import 'package:walker/Widgets/constants.dart';
+import 'package:walker/Widgets/navigation_drawer.dart';
+
  class AlarmPage extends StatefulWidget {
    @override
    _AlarmPageState createState() => _AlarmPageState();
@@ -9,8 +11,13 @@ import 'package:flutter/material.dart';
    @override
    Widget build(BuildContext context) {
      return Scaffold(
-      
-      body:Text("Burası alarm page")
-    );
+       backgroundColor: kPrimaryColor,
+       drawer: NavBar(),
+       appBar: AppBar(
+         title: Text("Alarm Page"),
+         backgroundColor: kPrimaryColor,
+         centerTitle: true,
+       ),
+     );
    }
  }

@@ -24,9 +24,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
     var height = size.height;
     return Scaffold(
       backgroundColor: kPrimaryColor,
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text("Sign Up"),
+        backgroundColor: kPrimaryColor,
+      ),
       body: ListView(
         children: <Widget>[
-          SizedBox(height: height * 0.003),
+
 
           //Turist resmi ve hizalandırması
 

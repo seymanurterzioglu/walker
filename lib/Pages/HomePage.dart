@@ -21,7 +21,6 @@ class _HomePageState extends State<HomePage> {
         title: Text("Home Page"),
         backgroundColor: kPrimaryColor,
         centerTitle: true,
-
 /*
         leading: Icon(
           Icons.menu,
@@ -32,7 +31,7 @@ class _HomePageState extends State<HomePage> {
             padding: const EdgeInsets.only(right: 15),
             child: Icon(Icons.subdirectory_arrow_left, size: width * 0.08),
           ),
-        ], *///buton koymaya yarar.
+        ], */ //buton koymaya yarar.
       ),
       body: Center(
         child: ListView.builder(

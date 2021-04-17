@@ -7,7 +7,7 @@ class TravelerPicture extends StatelessWidget {
     Size size=MediaQuery.of(context).size;
     var width=size.width;
     return Padding(
-      padding: const EdgeInsets.only(left:75),
+      padding: const EdgeInsets.only(left:75,top:10),
       child: Row(
         children:<Widget> [
           CircleAvatar(
