@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:walker/Widgets/constants.dart';
-import 'package:walker/Widgets/yerler.dart';
+import 'package:walker/Widgets/places.dart';
 import 'package:walker/Widgets/navigation_drawer.dart';
 
 class HomePage extends StatefulWidget {

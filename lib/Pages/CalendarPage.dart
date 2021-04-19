@@ -22,31 +22,29 @@ class _CalendarPageState extends State<CalendarPage> {
         backgroundColor: kPrimaryColor,
         centerTitle: true,
       ),
-     body: TableCalendar(
-       firstDay: DateTime(1990)
-       lastDay: DateTime(2050),
-       focusedDay: DateTime.now(),
-
-       selectedDayPredicate: (day) {
-         return isSameDay(_selectedDay, day);
-       },
-       onDaySelected: (selectedDay, focusedDay) {
-         setState(() {
-           _selectedDay = selectedDay;
-           _focusedDay = focusedDay;
-         });
-       },
-       calendarFormat: _calendarFormat,
-       onFormatChanged: (format) {
-         setState(() {
-           _calendarFormat = format;
-         });
-       },
-       onPageChanged: (focusedDay) {
-         _focusedDay = focusedDay;
-       },
-
-     ),
+      body: TableCalendar(
+        firstDay: DateTime(1990),
+        lastDay: DateTime(2050),
+        focusedDay: DateTime.now(),
+        selectedDayPredicate: (day) {
+          return isSameDay(_selectedDay, day);
+        },
+        onDaySelected: (selectedDay, focusedDay) {
+          setState(() {
+            _selectedDay = selectedDay;
+            _focusedDay = focusedDay;
+          });
+        },
+        calendarFormat: _calendarFormat,
+        onFormatChanged: (format) {
+          setState(() {
+            _calendarFormat = format;
+          });
+        },
+        onPageChanged: (focusedDay) {
+          _focusedDay = focusedDay;
+        },
+      ),
     );
   }
 }
