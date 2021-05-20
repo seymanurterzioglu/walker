@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:walker/Widgets//constants.dart';
+import 'package:walker/Widgets/profileScreen.dart';
 
 class NavBar extends StatelessWidget {
   @override
@@ -28,12 +29,20 @@ class NavBar extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.people),
             title: Text('Profiles'),
-            onTap: () => null,
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => ProfileScreen(),
+                ),
+              );
+            },
           ),
           ListTile(
             leading: Icon(Icons.favorite),
             title: Text('Favorites'),
-            onTap: () => null,
+            onTap: () {
+            },
           ),
           ListTile(
             leading: Icon(Icons.filter),
