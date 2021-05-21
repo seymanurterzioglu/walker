@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:walker/Guide/guide_main_page.dart';
 import 'package:walker/Widgets/constants.dart';
 import 'package:walker/Widgets/navigation_drawer.dart';
 
@@ -14,9 +15,25 @@ import 'package:walker/Widgets/navigation_drawer.dart';
        backgroundColor: kPrimaryColor,
        drawer: NavBar(),
        appBar: AppBar(
-         title: Text("Alarm Page"),
+         title: Text("Tourist Alarm"),
          backgroundColor: kPrimaryColor,
          centerTitle: true,
+         // guide sayfasına gidecek, appbarda iconbutton
+         actions:<Widget>[
+           IconButton(
+             icon: const Icon(Icons.assessment),
+             onPressed:() => {
+               Navigator.push(
+                 context,
+                 MaterialPageRoute(
+                   builder:(context) {
+                     return GuideMainPage();
+                   },
+                 ),
+               ),
+             },
+           ),
+         ],
        ),
      );
    }

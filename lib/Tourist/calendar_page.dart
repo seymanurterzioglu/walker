@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:walker/Guide/guide_main_page.dart';
 import 'package:walker/Widgets/constants.dart';
 import 'package:walker/Widgets/navigation_drawer.dart';
 import 'package:table_calendar/table_calendar.dart';
@@ -18,9 +19,25 @@ class _CalendarPageState extends State<CalendarPage> {
     return Scaffold(
       drawer: NavBar(),
       appBar: AppBar(
-        title: Text("Calendar"),
+        title: Text("Tourist Calendar"),
         backgroundColor: kPrimaryColor,
         centerTitle: true,
+        actions:<Widget>[
+          IconButton(   //  // guide sayfasına gidecek, appbarda iconbutton
+            icon: const Icon(Icons.assessment),
+            onPressed:() => {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder:(context) {
+                    return GuideMainPage();
+                  },
+                ),
+              ),
+            },
+          ),
+
+        ],
       ),
       body: TableCalendar(
         firstDay: DateTime(1990),

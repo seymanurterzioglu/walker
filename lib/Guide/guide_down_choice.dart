@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:walker/Pages/AddPage.dart';
-import 'package:walker/Pages/AlarmPage.dart';
-import 'package:walker/Pages/CalendarPage.dart';
-import 'package:walker/Pages/GuidePage.dart';
-import 'package:walker/Pages/HomePage.dart';
+import 'package:walker/Guide/guide_add_page.dart';
+import 'package:walker/Guide/guide_alarm_page.dart';
+import 'package:walker/Guide/guide_calendar_page.dart';
 import 'package:walker/Widgets/constants.dart';
+import 'file:///C:/Users/Monster/Documents/GitHub/walker/lib/Guide/guide_page.dart';
 
-class DownChoice extends StatefulWidget {
+
+class GuideDownChoice extends StatefulWidget {
   @override
-  _DownChoiceState createState() => _DownChoiceState();
+  _GuideDownChoiceState createState() => _GuideDownChoiceState();
 }
 
-class _DownChoiceState extends State<DownChoice> {
+class _GuideDownChoiceState extends State<GuideDownChoice> {
   int index=0;
   @override
   Widget build(BuildContext context) {
@@ -31,42 +31,44 @@ class _DownChoiceState extends State<DownChoice> {
         showUnselectedLabels: false,
         selectedLabelStyle: TextStyle(fontSize: 18),
         selectedItemColor: Colors.red,
-            items: [
-              BottomNavigationBarItem(
-             icon: new Icon(Icons.home,color:white,size: 18,),
+        items: [
+          BottomNavigationBarItem(
+            icon: new Icon(Icons.home,color:white,size: 18,),
             label: 'Home',
             activeIcon: Icon(Icons.home,
-            color:white,
-            size: 30,
+              color:white,
+              size: 30,
             ),
-             ),
+          ),
 
-               BottomNavigationBarItem(
-             icon: new Icon(Icons.add,color:white,size: 18,),
+          BottomNavigationBarItem(
+            icon: new Icon(Icons.add,color:white,size: 18,),
             label:'Add',
             activeIcon: Icon(Icons.add,
-            color:white,
-            size: 30,
+              color:white,
+              size: 30,
             ),
-             ),
+          ),
 
-               BottomNavigationBarItem(
-             icon: new Icon(Icons.calendar_today,color:white,size: 18,),
+          BottomNavigationBarItem(
+            icon: new Icon(Icons.calendar_today,color:white,size: 18,),
             label:'Calendar',
             activeIcon: Icon(Icons.calendar_today,
-            color:white,
-            size: 30,
+              color:white,
+              size: 30,
             ),
-             ),
+          ),
 
-               BottomNavigationBarItem(
-             icon: new Icon(Icons.alarm,color:white,size: 18,),
+          BottomNavigationBarItem(
+            icon: new Icon(Icons.alarm,color:white,size: 18,),
             label:'Alarm',
             activeIcon: Icon(Icons.alarm,
-            color:white,
-            size: 30,
+              color:white,
+              size: 30,
             ),
-             ),
+          ),
+
+          /*
                BottomNavigationBarItem(
              icon: new Icon(Icons.assessment, color:white,size: 18,),
             label: 'Guide',
@@ -75,17 +77,19 @@ class _DownChoiceState extends State<DownChoice> {
             size: 30,
             ),
              ),
-            ], 
-            
+
+               */
+        ],
+
       ),
       body: IndexedStack(
-       index: index,
+        index: index,
         children: [
-          HomePage(),
-          AddPage(),
-          CalendarPage(),
-          AlarmPage(),
           GuidePage(),
+          GuideAddPage(),
+          GuideCalendarPage(),
+          GuideAlarmPage(),
+
         ],
       ),
     );

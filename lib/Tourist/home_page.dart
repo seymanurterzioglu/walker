@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:walker/Guide/guide_main_page.dart';
 import 'package:walker/Widgets/constants.dart';
 import 'package:walker/Widgets/places.dart';
 import 'package:walker/Widgets/navigation_drawer.dart';
@@ -18,9 +19,25 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: kPrimaryColor,
       drawer: NavBar(),
       appBar: AppBar(
-        title: Text("Home Page"),
+        title: Text("Tourist Home"),
         backgroundColor: kPrimaryColor,
         centerTitle: true,
+        actions:<Widget>[  // // guide sayfasına gidecek, appbarda iconbutton
+          IconButton(
+              icon: const Icon(Icons.assessment),
+              onPressed:() => {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder:(context) {
+                      return GuideMainPage();
+                    },
+                  ),
+                ),
+              },
+          ),
+
+        ],
 /*
         leading: Icon(
           Icons.menu,

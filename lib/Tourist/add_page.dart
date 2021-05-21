@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:walker/Guide/guide_main_page.dart';
 import 'package:walker/Widgets/constants.dart';
 import 'package:walker/Widgets/navigation_drawer.dart';
 
@@ -14,9 +15,25 @@ class _AddPageState extends State<AddPage> {
       backgroundColor: kPrimaryColor,
       drawer: NavBar(),
       appBar: AppBar(
-        title: Text("Add Page"),
+        title: Text("Tourist Add"),
         backgroundColor: kPrimaryColor,
         centerTitle: true,
+        actions:<Widget>[  // // guide sayfasına gidecek, appbarda iconbutton
+          IconButton(
+            icon: const Icon(Icons.assessment),
+            onPressed:() => {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder:(context) {
+                    return GuideMainPage();
+                  },
+                ),
+              ),
+            },
+          ),
+
+        ],
       ),
     );
   }

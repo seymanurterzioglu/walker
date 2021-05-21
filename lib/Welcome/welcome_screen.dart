@@ -5,7 +5,7 @@ import 'package:walker/Widgets/constants.dart';
 import 'package:walker/Welcome/rounded_button.dart';
 import 'package:walker/Welcome/signup_screen.dart';
 import 'package:walker/Widgets/traveler_pic.dart';
-import 'package:walker/Pages//main_page.dart';
+import 'package:walker/Tourist/main_page.dart';
 import 'package:walker/Welcome//other_option.dart';
 
 //Uygulama ilk ekran

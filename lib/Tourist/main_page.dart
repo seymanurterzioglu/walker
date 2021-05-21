@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 //import 'package:walker/Widgets/constants.dart';
-import 'package:walker/Widgets/down_choice.dart';
+import 'file:///C:/Users/Monster/Documents/GitHub/walker/lib/Tourist/down_choice.dart';
 
 class MainPage extends StatefulWidget {
   @override

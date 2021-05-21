@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:walker/Welcome/welcome_screen.dart';
 import 'package:walker/Widgets//constants.dart';
 
 class NavBar extends StatelessWidget {
@@ -60,7 +61,14 @@ class NavBar extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.exit_to_app),
             title: Text('Logout'),
-            onTap: () => null,
+            onTap: () =>  Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder:(context) {
+                  return WelcomeScreen();
+                },
+              ),
+            ), //Navigator.push,
           ),
         ],
       ),
