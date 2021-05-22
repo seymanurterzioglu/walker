@@ -12,6 +12,7 @@ class CalendarPage extends StatefulWidget {
 class _CalendarPageState extends State<CalendarPage> {
   CalendarFormat _calendarFormat = CalendarFormat.month;
   DateTime _selectedDay = DateTime.now();
+  // ignore: unused_field
   DateTime _focusedDay = DateTime.now();
 
   @override
@@ -22,21 +23,21 @@ class _CalendarPageState extends State<CalendarPage> {
         title: Text("Tourist Calendar"),
         backgroundColor: kPrimaryColor,
         centerTitle: true,
-        actions:<Widget>[
-          IconButton(   //  // guide sayfasına gidecek, appbarda iconbutton
+        actions: <Widget>[
+          IconButton(
+            //  // guide sayfasına gidecek, appbarda iconbutton
             icon: const Icon(Icons.assessment),
-            onPressed:() => {
+            onPressed: () => {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder:(context) {
+                  builder: (context) {
                     return GuideMainPage();
                   },
                 ),
               ),
             },
           ),
-
         ],
       ),
       body: TableCalendar(

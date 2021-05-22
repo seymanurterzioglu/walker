@@ -4,7 +4,6 @@ import 'package:walker/Widgets/constants.dart';
 import 'package:walker/Widgets/navigation_drawer.dart';
 import 'package:table_calendar/table_calendar.dart';
 
-
 class GuideCalendarPage extends StatefulWidget {
   @override
   _GuideCalendarPageState createState() => _GuideCalendarPageState();
@@ -13,6 +12,7 @@ class GuideCalendarPage extends StatefulWidget {
 class _GuideCalendarPageState extends State<GuideCalendarPage> {
   CalendarFormat _calendarFormat = CalendarFormat.month;
   DateTime _selectedDay = DateTime.now();
+  // ignore: unused_field
   DateTime _focusedDay = DateTime.now();
 
   @override
@@ -23,21 +23,21 @@ class _GuideCalendarPageState extends State<GuideCalendarPage> {
         title: Text("Guide Calendar"),
         backgroundColor: kPrimaryColor,
         centerTitle: true,
-        actions:<Widget>[
-          IconButton(    // tourist sayfasına gidecek, appbarda iconbutton
+        actions: <Widget>[
+          IconButton(
+            // tourist sayfasına gidecek, appbarda iconbutton
             icon: const Icon(Icons.assessment),
-            onPressed:() => {
+            onPressed: () => {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder:(context) {
+                  builder: (context) {
                     return MainPage();
                   },
                 ),
               ),
             },
           ),
-
         ],
       ),
       body: TableCalendar(
