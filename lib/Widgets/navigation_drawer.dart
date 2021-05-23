@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:walker/Welcome/welcome_screen.dart';
 import 'package:walker/Widgets//constants.dart';
 import 'package:walker/Widgets/profileScreen.dart';
+import 'package:walker/Widgets/settings.dart';
 
 class NavBar extends StatelessWidget {
   @override
@@ -65,7 +66,14 @@ class NavBar extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.settings),
             title: Text('Settings'),
-            onTap: () => null,
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => Settings(),
+                ),
+              );
+            },
           ),
           ListTile(
             leading: Icon(Icons.exit_to_app),
