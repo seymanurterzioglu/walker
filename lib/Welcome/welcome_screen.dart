@@ -108,7 +108,14 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             padding: EdgeInsets.only(top: 3, left: 20),
             child: InkWell(
               onTap: () {
-                authMethods.signInWithGoogle(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return ForgotPassword();
+                    },
+                  ),
+                ); //Navigator.push
               },
               child: Text(
                 'Forgot Password',
@@ -142,7 +149,14 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             color: white,
             textColor: kPrimaryColor,
           ),
-
+          RoundedButton(
+            text: "LOGIN with Google",
+            press: () {
+              authMethods.signInWithGoogle(context);
+            },
+            color: white,
+            textColor: kPrimaryColor,
+          ),
           SizedBox(height: height * 0.009),
 
           //You don't have an account?Sign up

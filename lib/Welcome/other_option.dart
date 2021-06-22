@@ -39,7 +39,9 @@ class OtherOption extends StatelessWidget {
               SizedBox(width: width * 0.005),
               SignInButton(
                 Buttons.Google,
-                onPressed: () {},
+                onPressed: () {
+
+                },
               ),
             ],
           ),
