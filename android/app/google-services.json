@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "177550543447",
+    "project_id": "walker-bb2db",
+    "storage_bucket": "walker-bb2db.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:177550543447:android:6f43cae9fade005b7ff112",
+        "android_client_info": {
+          "package_name": "com.example.walker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "177550543447-bi23rhttem2l42s6imjol8nivs3kfdm6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.walker",
+            "certificate_hash": "864f4f42a2439ee4feff2d3dded33107f0629cf5"
+          }
+        },
+        {
+          "client_id": "177550543447-g847esbkjolsto5c0b698g0hugs424f5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDvXKt7R3W70OZEn0ds7EYVDRQ26XGPHAE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "177550543447-g847esbkjolsto5c0b698g0hugs424f5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

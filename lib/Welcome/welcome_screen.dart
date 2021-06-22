@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:walker/Welcome/forgot_password.dart';
@@ -7,6 +9,7 @@ import 'package:walker/Welcome/signup_screen.dart';
 import 'package:walker/Widgets/traveler_pic.dart';
 import 'package:walker/Tourist/main_page.dart';
 import 'package:walker/Welcome//other_option.dart';
+import 'package:walker/services/authentication_service.dart';
 
 //Uygulama ilk ekran
 
@@ -17,9 +20,10 @@ class WelcomeScreen extends StatefulWidget {
 
 class _WelcomeScreenState extends State<WelcomeScreen> {
   String password = '';
-
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
   bool isPasswordVisible = true;
-
+  final authMethods = AuthenticationService();
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -49,6 +53,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             child: Container(
               height: height * 0.09,
               child: TextField(
+                controller: emailController,
                 decoration: InputDecoration(
                   border: OutlineInputBorder(
                     borderSide: BorderSide(color: Colors.black),
@@ -72,6 +77,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             child: Container(
               height: height * 0.09,
               child: TextFormField(
+                controller: passwordController,
                 decoration: InputDecoration(
                   border: OutlineInputBorder(
                     borderSide: BorderSide(color: Colors.black),
@@ -102,14 +108,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             padding: EdgeInsets.only(top: 3, left: 20),
             child: InkWell(
               onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return ForgotPassword();
-                    },
-                  ),
-                ); //Navigator.push
+                authMethods.signInWithGoogle(context);
               },
               child: Text(
                 'Forgot Password',
