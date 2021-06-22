@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:walker/Guide/guide_main_page.dart';
 import 'package:walker/Widgets/constants.dart';
@@ -10,6 +11,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final User user = FirebaseAuth.instance.currentUser;
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -19,7 +21,7 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: kPrimaryColor,
       drawer: NavBar(),
       appBar: AppBar(
-        title: Text("Tourist Home"),
+        title: Text(user.uid.toString()),
         backgroundColor: kPrimaryColor,
         centerTitle: true,
         actions:<Widget>[  // // guide sayfasına gidecek, appbarda iconbutton

@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:provider/provider.dart';
@@ -9,7 +10,9 @@ import 'Welcome/welcome_screen.dart';
 import 'Widgets/constants.dart';
 //import 'package:walker/Widgets/navigation_drawer.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(MyApp());
 }
 
@@ -34,7 +37,7 @@ class MyApp extends StatelessWidget {
                 borderRadius: BorderRadius.circular(100.0),
               ),
               child: Image.asset("images/travelTheme2.jpg")),
-          nextScreen: Wrapper(),
+          nextScreen: WelcomeScreen(),
           splashTransition: SplashTransition.rotationTransition,
           splashIconSize: 200,
           backgroundColor: kPrimaryColor,
