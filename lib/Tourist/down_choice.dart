@@ -42,15 +42,6 @@ class _DownChoiceState extends State<DownChoice> {
              ),
 
                BottomNavigationBarItem(
-             icon: new Icon(Icons.add,color:white,size: 18,),
-            label:'Add',
-            activeIcon: Icon(Icons.add,
-            color:white,
-            size: 30,
-            ),
-             ),
-
-               BottomNavigationBarItem(
              icon: new Icon(Icons.calendar_today,color:white,size: 18,),
             label:'Calendar',
             activeIcon: Icon(Icons.calendar_today,
@@ -86,7 +77,6 @@ class _DownChoiceState extends State<DownChoice> {
        index: index,
         children: [
           HomePage(),
-          AddPage(),
           CalendarPage(),
           AlarmPage(),
           //GuidePage(),

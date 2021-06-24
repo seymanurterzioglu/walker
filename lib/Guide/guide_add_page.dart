@@ -57,7 +57,7 @@ class _GuideAddPageState extends State<GuideAddPage> {
                 SizedBox(height: height * 0.05),
 
                 Text(
-                  'New Activity Create',
+                  'New Travel Create',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     color: Colors.white,
@@ -71,18 +71,18 @@ class _GuideAddPageState extends State<GuideAddPage> {
                 //Organizer's Name
                 organizerName(),
 
-                //Activity's Name
+                //Travel  Name
 
-                activityName(),
+                travelName(),
 
-                //Activity's Date
-                activityDate(),
+                //Travel  Date
+                travelDate(),
 
-                //Activity's Quota (kontenjan)
-                activityQuota(),
+                //Travel  Quota (kontenjan)
+                travelQuota(),
 
-                //Activity Information
-                activityInformation(),
+                //Travel Information
+                travelInformation(),
 
                 SizedBox(height: height * 0.02),
                 //Add Button
@@ -207,7 +207,7 @@ class _GuideAddPageState extends State<GuideAddPage> {
     );
   }
 
-  Widget activityName() {
+  Widget travelName() {
     return Padding(
       padding: const EdgeInsets.only(left: 30, right: 30, top: 5, bottom: 5),
       child: Container(
@@ -219,7 +219,7 @@ class _GuideAddPageState extends State<GuideAddPage> {
               borderSide: BorderSide(color: Colors.black, width: 1),
               borderRadius: BorderRadius.all(Radius.circular(5)),
             ),
-            hintText: "Activity's Name",
+            hintText: "Travel's Name",
             filled: true,
             fillColor: Colors.white,
           ),
@@ -228,7 +228,7 @@ class _GuideAddPageState extends State<GuideAddPage> {
     );
   }
 
-  Widget activityDate() {
+  Widget travelDate() {
     return Padding(
       padding: const EdgeInsets.only(left: 30, right: 30, top: 5, bottom: 5),
       child: Container(
@@ -240,7 +240,7 @@ class _GuideAddPageState extends State<GuideAddPage> {
               borderSide: BorderSide(color: Colors.black, width: 1),
               borderRadius: BorderRadius.all(Radius.circular(5)),
             ),
-            hintText: "Activity's Date",
+            hintText: "Travel's Date",
             filled: true,
             fillColor: Colors.white,
           ),
@@ -249,7 +249,7 @@ class _GuideAddPageState extends State<GuideAddPage> {
     );
   }
 
-  Widget activityQuota() {
+  Widget travelQuota() {
     return Padding(
       padding: const EdgeInsets.only(left: 30, right: 30, top: 5, bottom: 5),
       child: Container(
@@ -261,7 +261,7 @@ class _GuideAddPageState extends State<GuideAddPage> {
               borderSide: BorderSide(color: Colors.black, width: 1),
               borderRadius: BorderRadius.all(Radius.circular(5)),
             ),
-            hintText: "Activity's Quota",
+            hintText: "Travel's Quota",
             filled: true,
             fillColor: Colors.white,
           ),
@@ -270,7 +270,7 @@ class _GuideAddPageState extends State<GuideAddPage> {
     );
   }
 
-  Widget activityInformation() {
+  Widget travelInformation() {
     return Padding(
       padding: const EdgeInsets.only(left: 30, right: 30, top: 5, bottom: 5),
       child: Container(
@@ -282,7 +282,7 @@ class _GuideAddPageState extends State<GuideAddPage> {
               borderSide: BorderSide(color: Colors.black, width: 1),
               borderRadius: BorderRadius.all(Radius.circular(5)),
             ),
-            hintText: "Activity's Information",
+            hintText: "Travel's Information",
             filled: true,
             fillColor: Colors.white,
           ),
