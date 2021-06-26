@@ -6,8 +6,8 @@ import 'package:walker/Welcome/welcome_screen.dart';
 import 'package:walker/services/authentication_service.dart';
 import 'package:walker/services/wrapper.dart';
 
-import 'Welcome/welcome_screen.dart';
-import 'Widgets/constants.dart';
+import '../Welcome/welcome_screen.dart';
+import 'constants.dart';
 //import 'package:walker/Widgets/navigation_drawer.dart';
 
 void main() async {
