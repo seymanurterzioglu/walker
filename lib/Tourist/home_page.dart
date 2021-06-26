@@ -21,7 +21,7 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: kPrimaryColor,
       drawer: NavBar(),
       appBar: AppBar(
-        title: Text(user.uid.toString()),
+        title: Text(user.uid == null ? "HomePage" : user.uid.toString()),
         backgroundColor: kPrimaryColor,
         centerTitle: true,
         actions:<Widget>[  // // guide sayfasına gidecek, appbarda iconbutton
